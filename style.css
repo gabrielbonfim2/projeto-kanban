@@ -1,0 +1,212 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #f4f6f9;
+  color: #222;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.top-bar {
+  max-width: 1200px;
+  margin: 0 auto 24px auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+}
+
+#taskInput {
+  padding: 14px;
+  border: 1px solid #d9dee7;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+}
+
+#taskInput:focus {
+  border-color: #4a7cff;
+}
+
+#addTaskBtn {
+  border: none;
+  background: #4a7cff;
+  color: white;
+  padding: 14px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#addTaskBtn:hover {
+  opacity: 0.95;
+}
+
+.board {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.column {
+  flex: 1 1 320px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 18px;
+  min-height: 450px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  border: 2px solid transparent;
+  transition: 0.2s;
+}
+
+.column h2 {
+  margin-bottom: 16px;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #eceff4;
+  padding-bottom: 10px;
+}
+
+.column.drag-over {
+  border-color: #4a7cff;
+  background: #f7faff;
+}
+
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 100px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e5eaf1;
+  border-left: 5px solid #4a7cff;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+  cursor: grab;
+}
+
+.card.dragging {
+  opacity: 0.5;
+}
+
+.card p {
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.card small {
+  display: block;
+  margin-top: 10px;
+  color: #777;
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.card-actions button {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.edit-btn {
+  background: #fff3cd;
+  color: #8a6500;
+}
+
+.delete-btn {
+  background: #ffe2e2;
+  color: #b42318;
+}
+
+.edit-area {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.edit-area textarea {
+  width: 100%;
+  min-height: 90px;
+  resize: vertical;
+  padding: 10px;
+  border: 1px solid #d9dee7;
+  border-radius: 10px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.save-btn {
+  background: #d1fadf;
+  color: #067647;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.cancel-btn {
+  background: #eceff3;
+  color: #4b5563;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.empty-message {
+  color: #9198a1;
+  text-align: center;
+  padding: 18px 10px;
+  border: 2px dashed #e3e8ef;
+  border-radius: 12px;
+  background: #fafbfd;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 14px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .top-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .column {
+    min-height: auto;
+  }
+}
