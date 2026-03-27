@@ -190,7 +190,7 @@ function createCardElement(task) {
   return card;
 }
 
-// Renderiza todas as tarefas
+// Ele Renderiza todas as tarefas
 function renderTasks() {
   clearColumns();
 
