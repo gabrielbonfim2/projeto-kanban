@@ -10,7 +10,7 @@ let tasks = [];
 // =============================
 const taskInput = document.getElementById("taskInput");
 const addTaskBtn = document.getElementById("addTaskBtn");
-const columns = document.querySelectorAll(".column");
+const columns = document.querySelectorAll(".column1, .column2, .column3");
 
 const cardContainers = {
   todo: document.getElementById("todo"),
@@ -37,6 +37,18 @@ function loadTasks() {
   const savedTasks = localStorage.getItem("kanbanTasks");
   tasks = savedTasks ? JSON.parse(savedTasks) : [];
 }
+
+function updateCounters() {
+  const todoCount = tasks.filter(task => task.status === "todo").length;
+  const doingCount = tasks.filter(task => task.status === "doing").length;
+  const doneCount = tasks.filter(task => task.status === "done").length;
+
+  document.getElementById("count-todo").textContent = todoCount;
+  document.getElementById("count-doing").textContent = doingCount;
+  document.getElementById("count-done").textContent = doneCount;
+}
+
+
 
 // Formata a data para pt-BR
 function formatDate(dateString) {
@@ -195,6 +207,8 @@ function renderTasks() {
 
     renderEmptyMessage(container, status);
   });
+updateCounters();
+
 }
 
 // =============================
@@ -321,6 +335,7 @@ columns.forEach(column => {
 function init() {
   loadTasks();
   renderTasks();
+  updateCounters();
 }
 
 init();

@@ -61,9 +61,31 @@ h1 {
   flex-wrap: wrap;
 }
 
-.column {
+.column1 {
   flex: 1 1 320px;
   background: #ffffff;
+  border-radius: 16px;
+  padding: 18px;
+  min-height: 450px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  border: 2px solid transparent;
+  transition: 0.2s;
+}
+
+.column2 {
+  flex: 1 1 320px; 
+  background: #e5ff00;
+  border-radius: 16px;
+  padding: 18px;
+  min-height: 450px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  border: 2px solid transparent;
+  transition: 0.2s;
+}
+
+.column3 {
+  flex: 1 1 320px;
+  background: #073a009c;
   border-radius: 16px;
   padding: 18px;
   min-height: 450px;
